@@ -106,21 +106,8 @@ class DepositeApiView(APIView):
             return Response({"Your Account is Credited now and Your Current Balance is":accno.balance})
 
 
-# class TransactionApi(APIView):
-#     def post(self,request,acc_no):
-#         serializer=TransactionTransfer(data=request.data)
-#         accno=BankStatement.objects.get(acc_no=acc_no)
-#         if serializer.is_valid():
-#             amnt = serializer.validated_data.get("amnt")
-#             receiver = serializer.validated_data.get("receiver")
-#             receiver_accno=serializer.validated_data.get("receiver_accno")
-#             if accno.balance<amnt:
-#                 user = BankStatement.objects.get(receiver)
-#                 if (user.receiver == receiver) & (user.receiver_accno == receiver_accno):
-#                         accno.balance-=amnt
-#                         return Response({"message": "balnce is transfered"})
-#                 else:
-#                     return Response({"message":"insuffiecient Balance:"})
-#
+
+
+
 
 
